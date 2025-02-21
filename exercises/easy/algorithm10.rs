@@ -1,6 +1,6 @@
 /*
 	graph
-	This problem requires you to implement a basic graph functio
+	This problem requires you to implement a basic graph function
 */
 
 
@@ -30,6 +30,22 @@ impl Graph for UndirectedGraph {
     }
     fn add_edge(&mut self, edge: (&str, &str, i32)) {
         //TODO
+        let (from, to, weight) = edge;
+
+        // 添加两个节点（如果它们还不存在）
+        self.add_node(from);
+        self.add_node(to);
+
+        // 因为是无向图，所以需要添加双向边
+        // 从 from 到 to
+        if let Some(edges) = self.adjacency_table_mutable().get_mut(from) {
+            edges.push((to.to_string(), weight));
+        }
+
+        // 从 to 到 from
+        if let Some(edges) = self.adjacency_table_mutable().get_mut(to) {
+            edges.push((from.to_string(), weight));
+        }
     }
 }
 pub trait Graph {
@@ -38,6 +54,11 @@ pub trait Graph {
     fn adjacency_table(&self) -> &HashMap<String, Vec<(String, i32)>>;
     fn add_node(&mut self, node: &str) -> bool {
         //TODO
+        if self.contains(node) {
+            return false; // 节点已存在
+        }
+        self.adjacency_table_mutable()
+            .insert(node.to_string(), Vec::new());
 		true
     }
     fn add_edge(&mut self, edge: (&str, &str, i32)) {

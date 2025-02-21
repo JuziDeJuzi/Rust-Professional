@@ -15,7 +15,7 @@ struct Node<T> {
     prev: Option<NonNull<Node<T>>>,
 }
 
-impl<T> Node<T> {
+impl<T: Clone> Node<T> {
     fn new(t: T) -> Node<T> {
         Node {
             val: t,
@@ -31,13 +31,13 @@ struct LinkedList<T> {
     end: Option<NonNull<Node<T>>>,
 }
 
-impl<T> Default for LinkedList<T> {
+impl<T: Clone> Default for LinkedList<T> {
     fn default() -> Self {
         Self::new()
     }
 }
 
-impl<T> LinkedList<T> {
+impl<T: Clone> LinkedList<T> {
     pub fn new() -> Self {
         Self {
             length: 0,
@@ -73,7 +73,37 @@ impl<T> LinkedList<T> {
         }
     }
 	pub fn reverse(&mut self){
-		// TODO
+		let mut reversed_list = LinkedList::new();
+        let mut ptr_self = self.end;
+
+        while let Some(node_self) = ptr_self {
+            unsafe {
+                reversed_list.add((*node_self.as_ptr()).val.clone());
+                ptr_self = node_self.as_ref().prev;
+            }
+        }
+
+        self.start = reversed_list.start;
+        self.end = reversed_list.end;
+        self.length = reversed_list.length;
+
+        // 方法2
+        // let mut prev = None;
+        // let mut current = self.start;
+        // let mut next;
+        //
+        // while let Some(mut node) = current {
+        //     unsafe {
+        //         next = node.as_ref().next;
+        //         node.as_mut().next = prev;
+        //         node.as_mut().prev = next;
+        //     }
+        //     prev = Some(node);
+        //     current = next;
+        // }
+        //
+        // self.end = self.start;
+        // self.start = prev;
 	}
 }
 

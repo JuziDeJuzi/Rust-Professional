@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/exercises/hard/solutiont1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/hard/solutiont2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/hard/solutiont3/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/hard/solutiont4/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/hard/solutiont5/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/normal/solution1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/normal/solution2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/normal/solution3/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/normal/solution4/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exercises/normal/solution5/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/hard/solutiont1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/hard/solutiont2/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/hard/solutiont3/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/hard/solutiont4/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/hard/solutiont5/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/normal/solution1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/normal/solution2/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/normal/solution3/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/normal/solution4/target" />
+      <excludeFolder url="file://$MODULE_DIR$/exercises/normal/solution5/target" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

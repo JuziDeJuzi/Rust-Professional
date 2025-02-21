@@ -4,7 +4,7 @@
 */
 
 
-use std::collections::VecDeque;
+use std::collections::{HashSet, VecDeque};
 
 // Define a graph
 struct Graph {
@@ -29,8 +29,21 @@ impl Graph {
     fn bfs_with_return(&self, start: usize) -> Vec<usize> {
         
 		//TODO
+        let mut visited = HashSet::new();
+        let mut queue = VecDeque::new();
+        let mut visit_order = Vec::new();
 
-        let mut visit_order = vec![];
+        queue.push_back(start);
+        visited.insert(start);
+        while let Some(node) = queue.pop_front() {
+            visit_order.push(node);
+            for &neighbor in &self.adj[node] {
+                if !visited.contains(&neighbor) {
+                    visited.insert(neighbor);
+                    queue.push_back(neighbor);
+                }
+            }
+        }
         visit_order
     }
 }
