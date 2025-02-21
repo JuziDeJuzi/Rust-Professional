@@ -11,15 +11,15 @@
 
 use std::fmt::{self, Display, Formatter};
 use std::collections::HashSet;
+
 pub fn intersection(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
-    let set1: HashSet<i32> = nums1.into_iter().collect();
-    let mut result = HashSet::new();
-    for num in nums2 {
-        if set1.contains(&num) {
-            result.insert(num);
-        }
-    }
-    result.into_iter().collect()
+    let set1: HashSet<_> = nums1.into_iter().collect();
+    let set2: HashSet<_> = nums2.into_iter().collect();
+    let mut result = set1.intersection(&set2)
+        .cloned()
+        .collect::<Vec<i32>>();
+    result.sort();
+    result
 }
 
 #[cfg(test)]
